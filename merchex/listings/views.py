@@ -11,23 +11,12 @@ def hello(request):
 
 
 def listings(request):
+    context = {}
     bands = Band.objects.all()
     announces = Announce.objects.all()
-    return HttpResponse(f"""
-                        <h1>Hello World !</h1>
-                        <p>Mes groupes préférés sont :</p>
-                        <ul>
-                            <li>{bands[0].name}</li>
-                            <li>{bands[1].name}</li>
-                            <li>{bands[2].name}</li>
-                        </ul>
-                        <p>Les annonces disponibles:</p>
-                        <ul>
-                            <li>{announces[0].title}</li>
-                            <li>{announces[1].title}</li>
-                            <li>{announces[2].title}</li>
-                        </ul>
-                        """)
+    context['bands'] = bands
+    context['announces'] = announces
+    return render(request, 'listings/band_list.html', context)
 
 
 def contact_us(request):
