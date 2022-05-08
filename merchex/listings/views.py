@@ -7,7 +7,7 @@ def hello(request):
     context = {}
     bands = Band.objects.all()
     context['bands'] = bands
-    return render(request, 'hello.html', context)
+    return render(request, 'listings/hello.html', context)
 
 
 def listings(request):
