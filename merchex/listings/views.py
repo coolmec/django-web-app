@@ -3,11 +3,11 @@ from django.shortcuts import render
 from listings.models import Band, Announce
 
 # Create your views here.
-def hello(request):
+def band_list(request):
     context = {}
     bands = Band.objects.all()
     context['bands'] = bands
-    return render(request, 'listings/hello.html', context)
+    return render(request, 'listings/band_list.html', context)
 
 
 def listings(request):
