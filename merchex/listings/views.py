@@ -9,6 +9,11 @@ def band_list(request):
     context['bands'] = bands
     return render(request, 'listings/band_list.html', context)
 
+def band_detail(request, band_id):
+    context = {}
+    bands = Band.objects.all()
+    context['band_id'] = band_id
+    return render(request, 'listings/band_detail.html', context)
 
 def listings(request):
     context = {}
