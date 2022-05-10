@@ -11,8 +11,9 @@ def band_list(request):
 
 def band_detail(request, band_id):
     context = {}
-    bands = Band.objects.all()
+    band = Band.objects.get(id=band_id)
     context['band_id'] = band_id
+    context['band'] = band
     return render(request, 'listings/band_detail.html', context)
 
 def listings(request):
