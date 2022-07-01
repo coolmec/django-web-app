@@ -5,6 +5,10 @@
 </head>
 <html>
     <body>
+        <nav>
+            <a href="{% url 'band-list' %}">Groupes</a>
+            <a href="{% url 'announce-list' %}">Annonces</a>
+        </nav>
         {% block content %}
         {% endblock %}
     </body>

@@ -1,0 +1,18 @@
+{% extends 'listings/base.html' %}
+
+{% block title %}
+<title>Merchex</title>
+{% endblock %}
+
+{% block content%}
+<h2>{{ announce.title }}</h2>
+
+<ul>
+    <li>Type : {{ announce.get_announce_type_display }}</li>
+    <li>Description : {{ announce.description }}</li>
+    <li>Annee : {{ announce.year }}</li>
+    <li>Vendu : {{ announce.sold|yesno }}</li>
+</ul>
+
+<a href="{% url 'announce-list' %}">Retour a la liste des annonces</a>
+{% endblock %}
