@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from listings.models import Band, Announce
+from listings.forms import ContactUsForm
 
 # Create your views here.
 def band_list(request):
@@ -39,5 +40,8 @@ def announce_detail(request, announce_id):
     return render(request, 'listings/announce_detail.html', context)
 
 def contact_us(request):
-    return HttpResponse("<h1>A propos</h1><p>Nous adorons merch !</p>")
+    context = {}
+    form = ContactUsForm()
+    context['form'] = form
+    return render(request, 'listings/contact.html', context)
 
