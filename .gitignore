@@ -1,4 +1,4 @@
-db.sqlite3
-__pycache__
-migrations
-merchex/__pycache__
+merchex/db.sqlite3
+merchex/listings/__pycache__
+merchex/listings/migrations
+merchex/merchex/__pycache__
