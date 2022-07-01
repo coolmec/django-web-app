@@ -1,0 +1,21 @@
+{% extends "listings/base.html" %}
+
+{% block title %}
+    <title>Merchex</title>
+{% endblock %}
+
+{% block content %}
+    <!-- <h1>Hello World !</h1>
+    <p>Mes groupes préférés sont :</p>
+    <ul>
+        {% for band in bands %}
+        <li><a href="{% url 'band-detail' band.id %}">{{ band.name }}</a></li>
+        {% endfor %}
+    </ul> -->
+    <p>Les annonces disponibles pour le groupe {{ band.name }}:</p>
+    <ul>
+        {% for announce in band.announce_set.all %}
+        <li><a href="{% url 'announce-detail' announce.id %}">{{announce.title}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

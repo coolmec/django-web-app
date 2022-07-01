@@ -16,6 +16,13 @@ def band_detail(request, band_id):
     context['band'] = band
     return render(request, 'listings/band_detail.html', context)
 
+def band_announce_list(request, band_id):
+    context = {}
+    band = Band.objects.get(id=band_id)
+    #context['band_id'] = band_id
+    context['band'] = band
+    return render(request, 'listings/band_announce_list.html', context)
+
 def announce_list(request):
     context = {}
     bands = Band.objects.all()
