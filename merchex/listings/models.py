@@ -16,6 +16,9 @@ class Band(models.Model):
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 
 class Announce(models.Model):
@@ -31,6 +34,7 @@ class Announce(models.Model):
     sold = models.fields.BooleanField(default=False)
     year = models.fields.IntegerField(null=True, blank=True)
     announce_type = models.fields.CharField(choices=AnnounceType.choices, max_length=10)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
 
 
 
